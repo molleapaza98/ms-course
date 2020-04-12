@@ -1,0 +1,11 @@
+server:
+  port: 8090
+
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file://c:/${user.home}/Desktop/developer
