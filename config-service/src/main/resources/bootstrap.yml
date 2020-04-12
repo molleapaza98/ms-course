@@ -1,11 +1,15 @@
-server:
-  port: 8090
 
+
+---
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
+        git:
+          uri: https://github.com/molleapaza98/ms-course
+          searchPaths: config-data
+        # "native" is used when the native profile is active, for local tests with a classpath repo:
         native:
-          searchLocations: file://c:/${user.home}/Desktop/developer
+          searchLocations: classpath:offline-repository/
+server:
+  port: 8090
